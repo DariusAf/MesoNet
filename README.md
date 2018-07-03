@@ -2,7 +2,9 @@
 
 You can find here the implementation of the network architecture and the dataset used in our paper on digital forensics.   
 
-[Link to paper](#)
+> We present a method to automatically detect face tampering in videos. We particularly focus on two recent approaches used to generate hyper-realistic forged videos: deepfake and face2face. Traditional image forensics techniques are usually not well suited to videos due to their compression that strongly degrades the data. Thus, we follow a deep learning approach and build two networks, both with a low number of layers to focus on mesoscopic properties of the image. We evaluate those fast networks on both an existing dataset and a dataset we have constituted from online videos. Our tests demonstrate a successful detection for more than 98\% for deepfake and 95\% for face2face.
+
+[Link to full paper](#)
 
 ## Requirements
 
