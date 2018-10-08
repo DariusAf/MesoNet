@@ -39,10 +39,11 @@ You can find here the implementation of the network architecture and the dataset
 ## Authors
 
 **Darius Afchar** - École des Ponts Paristech | École Normale Supérieure (France)
+
 **Vincent Nozick** - [Website](http://www-igm.univ-mlv.fr/~vnozick/?lang=fr)
 
 ## References
 
-Afchar, D., Nozick, V., Yamagishi, J., & Echizen, I. (2018, September). [MesoNet: a Compact Facial Video Forgery Detection Network. In IEEE Workshop on Information Forensics and Security](https://arxiv.org/abs/1809.00888), WIFS 2018.
+Afchar, D., Nozick, V., Yamagishi, J., & Echizen, I. (2018, September). [MesoNet: a Compact Facial Video Forgery Detection Network](https://arxiv.org/abs/1809.00888). In IEEE Workshop on Information Forensics and Security, WIFS 2018.
 
 This research was carried out while the authors stayed at the National Institute of Informatics, Japan.
