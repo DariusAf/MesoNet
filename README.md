@@ -36,6 +36,13 @@ You can find here the implementation of the network architecture and the dataset
 - Download links for our dataset will be available with the [WIFS 2018](http://wifs2018.comp.polyu.edu.hk) event, but don't hesitate to contact us directly if you are already interested.
 - Same goes for pretrained models.
 
-## Changelog
+## Authors
 
-- Add preprint link
+**Darius Afchar** - École des Ponts Paristech | École Normale Supérieure (France)
+**Vincent Nozick** - [Website](http://www-igm.univ-mlv.fr/~vnozick/?lang=fr)
+
+## References
+
+Afchar, D., Nozick, V., Yamagishi, J., & Echizen, I. (2018, September). [MesoNet: a Compact Facial Video Forgery Detection Network. In IEEE Workshop on Information Forensics and Security](https://arxiv.org/abs/1809.00888), WIFS 2018.
+
+This research was carried out while the authors stayed at the National Institute of Informatics, Japan.
