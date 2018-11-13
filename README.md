@@ -23,18 +23,19 @@ You can find here the implementation of the network architecture and the dataset
 |Training|5111|7250|
 |Validation|2889|4259|
 
-[Training set (~150Mo)](#)
+- Training set (~150Mo)
+- Validation set (~50Mo)
+- Training + Validation video set (~1.4Go)
 
-[Validation set (~50Mo)](#)
+Contact us to have access to the dataset.
 
-### Video datasets
+## Pretrained models
 
-[Training + Validation set (~1.4Go)](#)
+You can find the pretrained weight in the `weights` folder. The `_DF` extension correspond to a model trained to classify deepfake-generated images and the `_F2F` to Face2Face-generated images.
 
 ## Help
 
 - Download links for our dataset will be available with the [WIFS 2018](http://wifs2018.comp.polyu.edu.hk) event, but don't hesitate to contact us directly if you are already interested.
-- Same goes for pretrained models.
 
 ## Authors
 
