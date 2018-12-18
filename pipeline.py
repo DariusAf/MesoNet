@@ -120,7 +120,8 @@ class FaceFinder(Video):
     
     def find_faces(self, resize = 0.5, stop = 0, skipstep = 0, no_face_acceleration_threshold = 3, cut_left = 0, cut_right = -1, use_frameset = False, frameset = []):
         '''
-        The core function to extract faces from frames using previous frame location to accelerate the loop.
+        The core function to extract faces from frames
+        using previous frame location and downsampling to accelerate the loop.
         '''
         not_found = 0
         no_face = 0
@@ -201,6 +202,7 @@ class FaceFinder(Video):
 
         print('Face extraction report of', 'not_found :', not_found)
         print('Face extraction report of', 'no_face :', no_face)
+        return 0
     
     def get_face(self, i):
         ''' Basic unused face extraction without alignment '''
@@ -242,6 +244,7 @@ class FaceFinder(Video):
                                     floor(dl_-l//2),
                                     floor(dl_+l//2))
         return frame
+
 
 ## Face prediction
 
@@ -287,10 +290,7 @@ def predict_faces(generator, classifier, batch_size = 50, output_size = 1):
     return profile[1:]
 
 
-##
-
-
-def compute_accuracy(classifier, dirname):
+def compute_accuracy(classifier, dirname, frame_subsample_count = 30):
     '''
     Extraction + Prediction over a video
     '''
@@ -302,8 +302,10 @@ def compute_accuracy(classifier, dirname):
         
         # Compute face locations and store them in the face finder
         face_finder = FaceFinder(join(dirname, vid), load_first_face = False)
-        face_finder.find_faces(resize=0.5)
+        skipstep = max(floor(face_finder.length / frame_subsample_count), 0)
+        face_finder.find_faces(resize=0.5, skipstep = skipstep)
         
+        print('Predicting ', vid)
         gen = FaceBatchGenerator(face_finder)
         p = predict_faces(gen, classifier)
         
