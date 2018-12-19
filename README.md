@@ -14,6 +14,12 @@ You can find here the implementation of the network architecture and the dataset
 - Numpy 1.14.2
 - Keras 2.1.5
 
+If you want to use the complete pipeline with the face extraction from the videos, you will also need the following librairies :
+
+- [Imageio](https://pypi.org/project/imageio/)
+- [FFMPEG](https://www.ffmpeg.org/download.html)
+- [face_recognition](https://github.com/ageitgey/face_recognition)
+
 ## Dataset
 
 ### Aligned face datasets
