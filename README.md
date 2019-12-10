@@ -31,17 +31,12 @@ If you want to use the complete pipeline with the face extraction from the video
 
 - Training set (~150Mo)
 - Validation set (~50Mo)
-- Training + Validation video set (~1.4Go)
 
-Contact us to have access to the dataset.
+[Download link for the dataset](https://my.pcloud.com/publink/show?code=XZLGvd7ZI9LjgIy7iOLzXBG5RNJzGFQzhTRy)
 
 ## Pretrained models
 
 You can find the pretrained weight in the `weights` folder. The `_DF` extension correspond to a model trained to classify deepfake-generated images and the `_F2F` to Face2Face-generated images.
-
-## Help
-
-- Download links for our dataset will be available with the [WIFS 2018](http://wifs2018.comp.polyu.edu.hk) event, but don't hesitate to contact us directly if you are already interested.
 
 ## Authors
 
