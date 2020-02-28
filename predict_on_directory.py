@@ -1,41 +1,35 @@
+########################################################################################################################
+# Model
+########################################################################################################################
+
 import numpy as np
 from classifiers import *
 from pipeline import *
 
 import os
+import glob
+import sys
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
-from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
+REQUIRED_SIZE = (256, 256)
 
-# 1 - Load the model and its pretrained weights
-classifier = Meso4()
-classifier.load('weights/Meso4_DF')
+if __name__ == "__main__":
+    images_dir = sys.argv[1]
 
-# 2 - Minimial image generator
-# We did use it to read and compute the prediction by batchs on test videos
-# but do as you please, the models were trained on 256x256 images in [0,1]^(n*n)
+    if not os.path.isdir(images_dir):
+        print("## Directory provided {} doesn't exist.".format(images_dir))
+        exit()
 
-required_size = (256, 256)
-# dataGenerator = ImageDataGenerator(rescale=1./255)
-# generator = dataGenerator.flow_from_directory(
-#         'test_images',
-#         target_size=(256, 256),
-#         batch_size=1,
-#         shuffle=False,
-#         class_mode='binary',
-#         subset='training')
+    # 1 - Load the model and its pretrained weights
+    classifier = Meso4()
+    classifier.load('weights/Meso4_DF')
 
-# 3 - Predict
-
-for X, y in generator:
-        print('Predicted :', classifier.predict(X), '\nReal class :', y)
-        num_iterations += 1
-        if num_iterations >= 4:
-                break
-
-# 4 - Prediction for a video dataset
-
-# classifier.load('weights/Meso4_F2F')
-#
-# predictions = compute_accuracy(classifier, 'test_videos')
-# for video_name in predictions:
-#     print('`{}` video class prediction :'.format(video_name), predictions[video_name][0])
+    # Getting files
+    files = glob.glob(os.path.join(images_dir, "*.jpg"))
+    for f in files:
+        im = load_img(f, target_size=REQUIRED_SIZE)
+        im_arr = np.expand_dims(img_to_array(im), axis=0)
+        im_arr /= 255.0
+        print(im_arr.shape)
+        pred = classifier.predict(im_arr)
+        print("## Image {} is classified as {}".format(f, pred))
