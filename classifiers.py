@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-from keras.models import Model as KerasModel
-from keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Dropout, Reshape, Concatenate, LeakyReLU
-from keras.optimizers import Adam
+from tensorflow.keras.models import Model as KerasModel
+from tensorflow.keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Dropout, Reshape, Concatenate, LeakyReLU
+from tensorflow.keras.optimizers import Adam
 
 IMGWIDTH = 256
 
