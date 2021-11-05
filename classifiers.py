@@ -11,6 +11,8 @@ class Classifier:
         self.model = 0
     
     def predict(self, x):
+        if x.size == 0:
+            return []
         return self.model.predict(x)
     
     def fit(self, x, y):
